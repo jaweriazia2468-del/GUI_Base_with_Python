@@ -1,45 +1,195 @@
-Bank Account Management System (Python OOP)
+# 🏦 Bank Account Management System (Python Tkinter)
 
-A desktop-based financial management application developed in Python using the Tkinter library. This project serves as a practical implementation of advanced Object-Oriented Programming (OOP) concepts, specifically focusing on building a robust and scalable banking logic.
+## 📌 Project Overview
 
-Key Features
-Account Creation: Allows users to create different types of bank accounts (Savings or Checking) tied to a specific owner's name.
+The Bank Account Management System is a desktop GUI application developed using **Python** and **Tkinter**. It demonstrates Object-Oriented Programming (OOP) concepts including **Abstraction, Inheritance, and Polymorphism** while providing a simple banking environment where users can create accounts, deposit money, withdraw money, and check balances.
 
-Transaction Management: Supports core banking operations including deposits and withdrawals with real-time balance updates.
+The application supports two account types:
 
-Balance Inquiry: Provides an instant lookup feature to check the current balance of any registered account.
+- Savings Account
+- Checking Account
 
-Error Handling & Validation: Implements comprehensive try-except blocks and messagebox alerts to handle invalid inputs, such as negative amounts or exceeding overdraft limits.
+---
 
-User-Friendly GUI: Organized into logical LabelFrame sections ("Create Account" and "Transactions") for an intuitive user experience.
+## ✨ Features
 
-Advanced OOP Concepts Applied
-This project demonstrates the "Four Pillars of OOP" through the following implementations:
+- Create Savings Account
+- Create Checking Account
+- Deposit Money
+- Withdraw Money
+- Check Account Balance
+- Input Validation
+- Error Handling
+- Graphical User Interface (GUI)
 
-Abstraction: Uses the ABC (Abstract Base Class) module to define a template Account class. It enforces that any specific account type must implement its own deposit and withdraw methods.
+---
 
-Inheritance: The SavingsAccount and CheckingAccount classes inherit common attributes like owner and balance from the base Account class, reducing code redundancy.
+## 🛠 Technologies Used
 
-Polymorphism: Different account types handle the withdraw method differently; for example, the Checking Account allows an overdraft of up to PKR 500, while the Savings Account strictly prevents any withdrawal exceeding the current balance.
+- Python 3
+- Tkinter
+- Object-Oriented Programming (OOP)
 
-Encapsulation: The internal state of the bank (the self.accounts dictionary) and individual account balances are managed through class methods, ensuring data integrity.
+---
 
-Project Structure
-Account(ABC): The abstract base class defining the banking blueprint.
+## 📚 OOP Concepts Implemented
 
-SavingsAccount: Concrete implementation with standard withdrawal rules.
+### Abstraction
 
-CheckingAccount: Concrete implementation featuring a PKR 500 overdraft facility.
+The abstract class `Account` defines common methods:
 
-BankApp: The main GUI class that manages the Tkinter lifecycle and coordinates between the user interface and the account objects.
+- deposit()
+- withdraw()
 
-How to Run
-Install Python: Ensure you have Python 3.x installed on your system.
+These methods are implemented by child classes.
 
-Save the Script: Save the code as Bank Account.py.
+---
 
-Execute: Run the application via your terminal or IDE:
+### Inheritance
 
-Bash
+The following classes inherit from `Account`:
 
-python "Bank Account.py"
+- SavingsAccount
+- CheckingAccount
+
+---
+
+### Polymorphism
+
+Both account types implement their own version of:
+
+- deposit()
+- withdraw()
+
+The GUI interacts with accounts without knowing which specific account type is being used.
+
+---
+
+## 📂 Project Structure
+
+```
+BankAccountManagement/
+│
+├── bank.py
+└── README.md
+```
+
+---
+
+## 🚀 How to Run
+
+### Step 1
+
+Install Python 3.
+
+### Step 2
+
+Clone the repository.
+
+```bash
+git clone https://github.com/javeru=iazia26/BankAccountManagement.git
+```
+
+### Step 3
+
+Navigate to the project.
+
+```bash
+cd BankAccountManagement
+```
+
+### Step 4
+
+Run the application.
+
+```bash
+python bank.py
+```
+
+---
+
+## 💻 GUI Sections
+
+### Create Account
+
+- Owner Name
+- Savings Account
+- Checking Account
+- Create Account Button
+
+---
+
+### Transactions
+
+- Owner Name
+- Amount
+- Deposit
+- Withdraw
+- Check Balance
+
+---
+
+## ⚙ Business Rules
+
+### Savings Account
+
+- Deposit amount must be positive.
+- Withdrawal amount must be positive.
+- Cannot withdraw more than available balance.
+
+---
+
+### Checking Account
+
+- Deposit amount must be positive.
+- Withdrawal amount must be positive.
+- Allows overdraft up to PKR 500.
+
+---
+
+## ✔ Validation
+
+The system validates:
+
+- Empty owner name
+- Duplicate account
+- Invalid amount
+- Negative amount
+- Insufficient balance
+- Overdraft limit
+- Account existence
+
+---
+
+## 🎯 Learning Outcomes
+
+This project demonstrates:
+
+- Python GUI Programming
+- Object-Oriented Programming
+- Abstract Classes
+- Polymorphism
+- Exception Handling
+- Event-Driven Programming
+
+---
+
+## 📸 Application Workflow
+
+1. Create an account.
+2. Select account type.
+3. Deposit money.
+4. Withdraw money.
+5. Check balance.
+
+---
+
+## Future Improvements
+
+- Login System
+- PIN Authentication
+- Transaction History
+- SQLite Database
+- Account Number Generation
+- Interest Calculation
+- Money Transfer
